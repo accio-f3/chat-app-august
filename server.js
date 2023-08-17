@@ -4,19 +4,19 @@ const SocketIO = require('socket.io');
 const http = require('http');
 
 // these are extracting things from above imports
-const app = express(); // getting app from express function
+const expressServer = express(); // getting app from express function
 const { Server } = SocketIO; // socketIO gives me a Server Class
 // this 'Server Class' takes an http server and gives me an IO
 
 // as the server that i am getting from express() is not proper http
-const httpServer = http.createServer(app);
+const httpServer = http.createServer(expressServer);
 const IO = new Server(httpServer);
 
 // PORT
 const PORT = 3333;
 
 // middleware to run my client
-app.use(express.static('client'));
+expressServer.use(express.static('client'));
 
 // this on start function
 function onStartFn(){
