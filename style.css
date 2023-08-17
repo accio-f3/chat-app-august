@@ -1,0 +1,50 @@
+/* what ever things my join button was doing, i made that as default behaviour */
+/* just for our easiness */
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.form-username{
+    display: block;  /* this has to be reversed to block */
+}
+
+.chatroom-container{
+    display: none; /* this has to be reversed to none */
+    height: 100vh;
+    width: 100%;
+}
+
+.messages{
+    display: flex;
+    flex-direction: column;
+    height: 95vh;
+    background-color: #e1e1e1;
+    /* align-items: flex-end; */
+}
+
+.input-div{
+    display: flex;
+}
+
+.input-div > input {
+    flex: 8;
+    height: 5vh;
+}
+.input-div > button {
+    flex: 2;
+    height: 5vh;
+}
+
+.message {
+    background-color: #075e54;
+    width: fit-content;
+    padding: 0.5rem;
+    margin: 0.5rem;
+    color: white;
+}
+
+.sent{
+    align-self: flex-end;
+    background-color: #075e00;
+}
