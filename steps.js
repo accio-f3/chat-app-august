@@ -4,3 +4,6 @@
 
 // const socket = io(); is replace of fetch
 // io() is same as fetch
+
+// documentation for my chat application
+// https://socket.io/get-started/chat

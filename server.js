@@ -27,11 +27,25 @@ function onStartFn(){
 // onStartFn just to confirm if my server is running
 httpServer.listen(PORT,onStartFn);
 
-IO.on('connection',(socket)=>{
+IO.on('connection',(socket)=>{ // connection is predefined syntax
     console.log('connection established', socket.id);
+    // 'chat message' is my defined event
+    // you can use any syntax
+    // this is step 2
+    socket.on('chat message',(data)=>{ // I got data in my socket from
+        // client
+        // this is my step 3
+        IO.emit('chat message',data);
+    })
+    socket.on('disconnect',()=>{
+        console.log(socket.id,'left the chat');
+    })
 })
 
 
+// .on is event syntax for IO and sockets
+/// UI PART ///------server part-----/// UI part
+// client A -> socket A ->Io -> emit -> socket B -> client B
 // app -> express server
 // httpServer -> app modified into httpServer
 // app -> httpServer
